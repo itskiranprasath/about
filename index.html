@@ -6,12 +6,11 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Kiran Prasath - Engineer | Security Researcher | Trader</title>
     <style>
-        .expertise-icon img
-         {
+        .expertise-icon img {
             width: 62px;
             height: 62px;
             object-fit: contain;
-         }
+        }
 
         * {
             margin: 0;
@@ -40,7 +39,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Particle Background */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -51,7 +49,6 @@
             background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -131,7 +128,6 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -186,7 +182,6 @@
             z-index: 2;
         }
 
-        /* Animated rings around profile */
         .ring {
             position: absolute;
             border: 2px solid rgba(255,255,255,0.3);
@@ -339,7 +334,6 @@
             text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
         }
 
-        /* Section Styles */
         section {
             padding: 5rem 5%;
             max-width: 1200px;
@@ -375,7 +369,6 @@
             to { width: 80px; }
         }
 
-        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -465,7 +458,6 @@
             font-size: 0.9rem;
         }
 
-        /* Education Section */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -562,7 +554,6 @@
             transition: all 0.3s;
         }
 
-        /* Floating badges animation */
         @keyframes floatBadge {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             25% { transform: translateY(-10px) rotate(5deg); }
@@ -570,16 +561,12 @@
             75% { transform: translateY(-15px) rotate(5deg); }
         }
 
-        .cert-badge {
-            animation: floatBadge 4s ease-in-out infinite;
-        }
-
+        .cert-badge { animation: floatBadge 4s ease-in-out infinite; }
         .cert-badge:nth-child(1) { animation-delay: 0s; }
         .cert-badge:nth-child(2) { animation-delay: 0.5s; }
         .cert-badge:nth-child(3) { animation-delay: 1s; }
         .cert-badge:nth-child(4) { animation-delay: 1.5s; }
 
-        /* Work Experience */
         .timeline {
             position: relative;
             padding: 2rem 0;
@@ -655,12 +642,8 @@
         }
 
         @keyframes pulse-marker {
-            0%, 100% {
-                box-shadow: 0 0 0 8px rgba(102, 126, 234, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 0 15px rgba(102, 126, 234, 0.4);
-            }
+            0%, 100% { box-shadow: 0 0 0 8px rgba(102, 126, 234, 0.2); }
+            50% { box-shadow: 0 0 0 15px rgba(102, 126, 234, 0.4); }
         }
 
         .company-logo {
@@ -685,7 +668,6 @@
             transform: translateX(10px);
         }
 
-        /* Contact Section */
         .contact {
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             color: #2d3748;
@@ -782,7 +764,6 @@
             transform: scale(1.1);
         }
 
-        /* Footer */
         footer {
             background: var(--dark);
             color: white;
@@ -790,153 +771,108 @@
             padding: 2rem;
         }
 
-        /* Additional Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         @keyframes bounce {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(-15px);
-            }
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
         }
 
         @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                flex-direction: column;
-                align-items: flex-start;
-                padding-left: 50px;
-            }
-
-            .timeline-content {
-                width: 100%;
-            }
-
-            .timeline-marker {
-                left: 20px;
-            }
-
-            section {
-                padding: 3rem 5%;
-            }
-            
-            #techstack {
-                padding: 3rem 2% !important;
-            }
-            
-            #techstack .section-title {
-                font-size: 2rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            #techstack p {
-                font-size: 0.9rem;
-                margin-bottom: 2rem !important;
-            }
-
-            .hero-image-container {
-                width: 150px;
-                height: 150px;
-            }
-
-            .hero-image {
-                width: 130px;
-                height: 130px;
-            }
-
-            .ring1 { width: 170px; height: 170px; }
-            .ring2 { width: 210px; height: 210px; }
-            .ring3 { width: 250px; height: 250px; }
+        /* Tech Node Styles */
+        .tech-node {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
         }
 
-        /* Scroll reveal animation */
+        .tech-node:hover {
+            transform: translate(-50%, -50%) scale(1.15);
+            z-index: 100;
+        }
+
+        .node-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15), 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .tech-node:hover .node-content {
+            border-color: rgba(0, 0, 0, 1);
+            box-shadow: 0 0 40px rgba(0,0,0,0.3), 0 15px 50px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .node-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .node-icon img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
+            transition: all 0.3s ease;
+        }
+
+        .tech-node:hover .node-icon img {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+        }
+
+        .node-label {
+            font-size: 0.7rem;
+            color: #2d3748;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+        }
+
+        /* Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -948,7 +884,7 @@
             transform: translateY(0);
         }
 
-        /* Loading animation */
+        /* Loading */
         .loading-overlay {
             position: fixed;
             top: 0;
@@ -981,187 +917,86 @@
             to { transform: rotate(360deg); }
         }
 
-
-        /* Simpler Neural Network Styles */
-        .tech-node {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .tech-node:hover {
-            transform: translate(-50%, -50%) scale(1.15);
-            z-index: 100;
-        }
-
-        .node-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(0, 0, 0, 0.8);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 
-                0 0 20px rgba(0, 0, 0, 0.15),
-                0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .tech-node:hover .node-content {
-            border-color: rgba(0, 0, 0, 1);
-            box-shadow: 
-                0 0 40px rgba(0, 0, 0, 0.3),
-                0 15px 50px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 1);
-        }
-
-        .node-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.3rem;
-            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
-            transition: all 0.3s ease;
-        }
-
-        /* Custom image support */
-        .node-icon img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
-            transition: all 0.3s ease;
-        }
-
-        .tech-node:hover .node-icon {
-            transform: scale(1.2);
-            filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
-        }
-
-        .tech-node:hover .node-icon img {
-            filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
-        }
-
-        .node-label {
-            font-size: 0.7rem;
-            color: #2d3748;
-            font-weight: 600;
-            text-align: center;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
-            #neuralNetworkContainer {
-                height: 900px;
+            nav ul { display: none; }
+
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+
+            .about-content { grid-template-columns: 1fr; }
+            .expertise-grid { grid-template-columns: 1fr; }
+
+            .timeline::before { left: 20px; }
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 50px;
             }
-            
-            .tech-node {
-                width: 85px;
-                height: 85px;
+            .timeline-content { width: 100%; }
+            .timeline-marker { left: 20px; }
+
+            section { padding: 3rem 5%; }
+
+            #techstack {
+                padding: 3rem 2% !important;
             }
-            
-            .node-icon {
+
+            #techstack .section-title {
                 font-size: 2rem;
+                margin-bottom: 0.5rem;
             }
-            
-            .node-icon img {
-                width: 50px;
-                height: 50px;
+
+            #techstack p {
+                font-size: 0.9rem;
+                margin-bottom: 2rem !important;
             }
-            
-            .node-label {
-                font-size: 0.65rem;
-            }
-            
-            /* Reposition nodes for better mobile layout - 3 column grid */
-            .tech-node[data-tech="React"] { top: 8% !important; left: 15% !important; }
-            .tech-node[data-tech="Python"] { top: 8% !important; left: 50% !important; }
-            .tech-node[data-tech="JavaScript"] { top: 8% !important; left: 85% !important; }
-            
-            .tech-node[data-tech="Node.js"] { top: 22% !important; left: 30% !important; }
-            .tech-node[data-tech="TypeScript"] { top: 22% !important; left: 70% !important; }
-            
-            .tech-node[data-tech="AWS"] { top: 36% !important; left: 15% !important; }
-            .tech-node[data-tech="Docker"] { top: 36% !important; left: 50% !important; }
-            .tech-node[data-tech="MongoDB"] { top: 36% !important; left: 85% !important; }
-            
-            .tech-node[data-tech="Redis"] { top: 50% !important; left: 30% !important; }
-            .tech-node[data-tech="GraphQL"] { top: 50% !important; left: 70% !important; }
-            
-            .tech-node[data-tech="Security"] { top: 64% !important; left: 15% !important; }
-            .tech-node[data-tech="AI/ML"] { top: 64% !important; left: 50% !important; }
-            .tech-node[data-tech="Blockchain"] { top: 64% !important; left: 85% !important; }
-            
-            .tech-node[data-tech="Git"] { top: 78% !important; left: 30% !important; }
-            .tech-node[data-tech="Linux"] { top: 78% !important; left: 70% !important; }
-            
-            .tech-node[data-tech="REST API"] { top: 92% !important; left: 50% !important; }
+
+            #neuralNetworkContainer { height: 800px; }
+
+            .tech-node { width: 85px; height: 85px; }
+            .node-icon img { width: 45px; height: 45px; }
+            .node-label { font-size: 0.65rem; }
+
+            .tech-node[data-tech="Networking"] { top: 8% !important;  left: 20% !important; }
+            .tech-node[data-tech="Linux"]      { top: 8% !important;  left: 50% !important; }
+            .tech-node[data-tech="Python"]     { top: 8% !important;  left: 80% !important; }
+            .tech-node[data-tech="Security"]   { top: 36% !important; left: 20% !important; }
+            .tech-node[data-tech="Bash"]       { top: 36% !important; left: 50% !important; }
+            .tech-node[data-tech="Cloud"]        { top: 36% !important; left: 80% !important; }
+            .tech-node[data-tech="Hardware"]   { top: 64% !important; left: 20% !important; }
+            .tech-node[data-tech="Git"]        { top: 64% !important; left: 50% !important; }
+            .tech-node[data-tech="AI/ML"]      { top: 64% !important; left: 80% !important; }
+
+            .hero-image-container { width: 150px; height: 150px; }
+            .hero-image { width: 130px; height: 130px; }
+            .ring1 { width: 170px; height: 170px; }
+            .ring2 { width: 210px; height: 210px; }
+            .ring3 { width: 250px; height: 250px; }
         }
-        
+
         @media (max-width: 480px) {
-            #neuralNetworkContainer {
-                height: 1000px;
-            }
-            
-            .tech-node {
-                width: 75px;
-                height: 75px;
-            }
-            
-            .node-content {
-                border-width: 2px;
-            }
-            
-            .node-icon {
-                font-size: 1.8rem;
-                margin-bottom: 0.2rem;
-            }
-            
-            .node-icon img {
-                width: 45px;
-                height: 45px;
-            }
-            
-            .node-label {
-                font-size: 0.6rem;
-            }
-            
-            /* Tighter layout for small phones */
-            .tech-node[data-tech="React"] { top: 6% !important; left: 18% !important; }
-            .tech-node[data-tech="Python"] { top: 6% !important; left: 50% !important; }
-            .tech-node[data-tech="JavaScript"] { top: 6% !important; left: 82% !important; }
-            
-            .tech-node[data-tech="Node.js"] { top: 18% !important; left: 30% !important; }
-            .tech-node[data-tech="TypeScript"] { top: 18% !important; left: 70% !important; }
-            
-            .tech-node[data-tech="AWS"] { top: 32% !important; left: 18% !important; }
-            .tech-node[data-tech="Docker"] { top: 32% !important; left: 50% !important; }
-            .tech-node[data-tech="MongoDB"] { top: 32% !important; left: 82% !important; }
-            
-            .tech-node[data-tech="Redis"] { top: 44% !important; left: 30% !important; }
-            .tech-node[data-tech="GraphQL"] { top: 44% !important; left: 70% !important; }
-            
-            .tech-node[data-tech="Security"] { top: 58% !important; left: 18% !important; }
-            .tech-node[data-tech="AI/ML"] { top: 58% !important; left: 50% !important; }
-            .tech-node[data-tech="Blockchain"] { top: 58% !important; left: 82% !important; }
-            
-            .tech-node[data-tech="Git"] { top: 70% !important; left: 30% !important; }
-            .tech-node[data-tech="Linux"] { top: 70% !important; left: 70% !important; }
-            
-            .tech-node[data-tech="REST API"] { top: 84% !important; left: 50% !important; }
+            #neuralNetworkContainer { height: 900px; }
+
+            .tech-node { width: 75px; height: 75px; }
+            .node-icon img { width: 40px; height: 40px; }
+            .node-label { font-size: 0.6rem; }
+
+            .tech-node[data-tech="Networking"] { top: 6% !important;  left: 18% !important; }
+            .tech-node[data-tech="Linux"]      { top: 6% !important;  left: 50% !important; }
+            .tech-node[data-tech="Python"]     { top: 6% !important;  left: 82% !important; }
+            .tech-node[data-tech="Security"]   { top: 33% !important; left: 18% !important; }
+            .tech-node[data-tech="Bash"]       { top: 33% !important; left: 50% !important; }
+            .tech-node[data-tech="Cloud"]        { top: 33% !important; left: 82% !important; }
+            .tech-node[data-tech="Hardware"]   { top: 60% !important; left: 18% !important; }
+            .tech-node[data-tech="Git"]        { top: 60% !important; left: 50% !important; }
+            .tech-node[data-tech="AI/ML"]      { top: 60% !important; left: 82% !important; }
         }
     </style>
 </head>
 <body>
+
     <!-- Loading Screen -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader"></div>
@@ -1209,40 +1044,29 @@
         <div class="about-content">
             <div class="about-text reveal">
                 <p>I'm an <strong>Engineer</strong>, <strong>Security Researcher</strong>, <strong>Algorithmic Forex Trader</strong>, and <strong>Investor</strong> - a curious mind who thrives on exploration, both in technology and in life.</p>
-                
                 <p>I've always been fascinated by how systems work, whether it's a complex cybersecurity framework, a financial market algorithm, or the mechanics of peak human performance. I love to break things apart, understand their core, and rebuild them stronger, smarter, and more secure.</p>
-                
                 <div class="highlight-box">
                     <p><strong>My Mission:</strong> To use my skills to build wealth, create freedom, and continuously learn. I'm a lifelong learner who's always curious, always experimenting, and always evolving.</p>
                 </div>
             </div>
-            
             <div class="expertise-grid reveal">
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <img src="images/sec.png" alt="Security">
-                        </div>
+                    <div class="expertise-icon"><img src="images/sec.png" alt="Security"></div>
                     <h3>Security Research</h3>
                     <p>Hands-on research into vulnerabilities, exploit techniques, and system internals, with an emphasis on understanding root causes and mitigation strategies.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <img src="images/trade.png" alt="Trade">
-                        </div>
+                    <div class="expertise-icon"><img src="images/trade.png" alt="Trade"></div>
                     <h3>Algorithmic Trading</h3>
                     <p>Development of systematic FX trading algorithms involving signal generation, backtesting, parameter optimization, position sizing, and automated execution based on market data and statistical analysis.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <img src="images/invest.png" alt="Invest">
-                        </div>
+                    <div class="expertise-icon"><img src="images/invest.png" alt="Invest"></div>
                     <h3>Investment</h3>
                     <p>Analysis and allocation of capital across financial instruments using fundamental and quantitative methods, with an emphasis on risk assessment, portfolio construction, and long-term value creation.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <img src="images/sports.png" alt="Sports">
-                        </div>
+                    <div class="expertise-icon"><img src="images/sports.png" alt="Sports"></div>
                     <h3>Sports & Travel</h3>
                     <p>Participation in sports and travel experiences that foster physical endurance, strategic thinking, resilience, and cultural awareness.</p>
                 </div>
@@ -1250,133 +1074,74 @@
         </div>
     </section>
 
-    <!-- Tech Stack Neural Network Section - Simpler Version -->
+    <!-- Tech Stack Section -->
     <section id="techstack" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); padding: 6rem 5%; position: relative; overflow: hidden;">
         <h2 class="section-title reveal" style="color: #2d3748;">Core Stack</h2>
         <p style="text-align: center; color: #718096; margin-bottom: 3rem; font-size: 1.1rem;">Stack Visualization</p>
-        
+
         <div id="neuralNetworkContainer" style="position: relative; width: 100%; height: 600px; max-width: 1200px; margin: 0 auto;">
-            <!-- Canvas for connections and particles -->
             <canvas id="networkCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
-            
-            <!-- Tech Stack Nodes -->
-            <div class="tech-node" data-tech="React" style="top: 20%; left: 15%;">
+
+            <div class="tech-node" data-tech="Networking" style="top: 15%; left: 20%;">
                 <div class="node-content">
-                    <div class="node-icon">
-                        <!-- You can use emoji, PNG, or SVG image -->
-                        <!-- Option 1: Emoji (default) -->
-                        ⚛️
-                        <!-- Option 2: PNG/JPG Image -->
-                        <!-- <img src="images/tech/react.png" alt="React"> -->
-                        <!-- Option 3: SVG Image (recommended for crisp quality) -->
-                        <!-- <img src="images/tech/react.svg" alt="React"> -->
-                    </div>
-                    <div class="node-label">React</div>
+                    <div class="node-icon"><img src="images/networking.png" alt="Networking"></div>
+                    <div class="node-label">Networking</div>
                 </div>
             </div>
-            
-            <div class="tech-node" data-tech="Python" style="top: 15%; left: 35%;">
+
+            <div class="tech-node" data-tech="Linux" style="top: 15%; left: 50%;">
                 <div class="node-content">
-                    <div class="node-icon">🐍</div>
-                    <div class="node-label">Python</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="JavaScript" style="top: 25%; left: 55%;">
-                <div class="node-content">
-                    <div class="node-icon">📱</div>
-                    <div class="node-label">JavaScript</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="Node.js" style="top: 18%; left: 75%;">
-                <div class="node-content">
-                    <div class="node-icon">🟢</div>
-                    <div class="node-label">Node.js</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="TypeScript" style="top: 12%; left: 90%;">
-                <div class="node-content">
-                    <div class="node-icon">📘</div>
-                    <div class="node-label">TypeScript</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="AWS" style="top: 50%; left: 10%;">
-                <div class="node-content">
-                    <div class="node-icon">☁️</div>
-                    <div class="node-label">AWS</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="Docker" style="top: 55%; left: 28%;">
-                <div class="node-content">
-                    <div class="node-icon">🐳</div>
-                    <div class="node-label">Docker</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="MongoDB" style="top: 48%; left: 45%;">
-                <div class="node-content">
-                    <div class="node-icon">🗄️</div>
-                    <div class="node-label">MongoDB</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="Redis" style="top: 52%; left: 62%;">
-                <div class="node-content">
-                    <div class="node-icon">⚡</div>
-                    <div class="node-label">Redis</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="GraphQL" style="top: 45%; left: 80%;">
-                <div class="node-content">
-                    <div class="node-icon">◈</div>
-                    <div class="node-label">GraphQL</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="Security" style="top: 50%; left: 95%;">
-                <div class="node-content">
-                    <div class="node-icon">🔒</div>
-                    <div class="node-label">Security</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="AI/ML" style="top: 80%; left: 18%;">
-                <div class="node-content">
-                    <div class="node-icon">🤖</div>
-                    <div class="node-label">AI/ML</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="Blockchain" style="top: 85%; left: 38%;">
-                <div class="node-content">
-                    <div class="node-icon">⛓️</div>
-                    <div class="node-label">Blockchain</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="Git" style="top: 78%; left: 58%;">
-                <div class="node-content">
-                    <div class="node-icon">🐙</div>
-                    <div class="node-label">Git</div>
-                </div>
-            </div>
-            
-            <div class="tech-node" data-tech="Linux" style="top: 82%; left: 75%;">
-                <div class="node-content">
-                    <div class="node-icon">🐧</div>
+                    <div class="node-icon"><img src="images/linux.png" alt="Linux"></div>
                     <div class="node-label">Linux</div>
                 </div>
             </div>
-            
-            <div class="tech-node" data-tech="REST API" style="top: 88%; left: 90%;">
+
+            <div class="tech-node" data-tech="Python" style="top: 15%; left: 80%;">
                 <div class="node-content">
-                    <div class="node-icon">🔌</div>
-                    <div class="node-label">REST API</div>
+                    <div class="node-icon"><img src="images/python.png" alt="Python"></div>
+                    <div class="node-label">Python</div>
+                </div>
+            </div>
+
+            <div class="tech-node" data-tech="Security" style="top: 45%; left: 10%;">
+                <div class="node-content">
+                    <div class="node-icon"><img src="images/security.png" alt="Security"></div>
+                    <div class="node-label">Security</div>
+                </div>
+            </div>
+
+            <div class="tech-node" data-tech="Bash" style="top: 45%; left: 35%;">
+                <div class="node-content">
+                    <div class="node-icon"><img src="images/bash.png" alt="Bash"></div>
+                    <div class="node-label">Bash</div>
+                </div>
+            </div>
+
+            <div class="tech-node" data-tech="Cloud" style="top: 45%; left: 62%;">
+                <div class="node-content">
+                    <div class="node-icon"><img src="images/cloud.png" alt="Cloud"></div>
+                    <div class="node-label">Cloud</div>
+                </div>
+            </div>
+
+            <div class="tech-node" data-tech="Hardware" style="top: 45%; left: 88%;">
+                <div class="node-content">
+                    <div class="node-icon"><img src="images/hardware.png" alt="Hardware"></div>
+                    <div class="node-label">Hardware</div>
+                </div>
+            </div>
+
+            <div class="tech-node" data-tech="Git" style="top: 75%; left: 30%;">
+                <div class="node-content">
+                    <div class="node-icon"><img src="images/git.png" alt="Git"></div>
+                    <div class="node-label">Git</div>
+                </div>
+            </div>
+
+            <div class="tech-node" data-tech="AI/ML" style="top: 75%; left: 65%;">
+                <div class="node-content">
+                    <div class="node-icon"><img src="images/aiml.png" alt="AI/ML"></div>
+                    <div class="node-label">AI/ML</div>
                 </div>
             </div>
         </div>
@@ -1385,7 +1150,6 @@
     <!-- Education Section -->
     <section id="education">
         <h2 class="section-title reveal">Education & Certifications</h2>
-        
         <div class="education-grid reveal">
             <div class="edu-card">
                 <img src="images/school.png" alt="Sri Ambal Public School">
@@ -1398,22 +1162,13 @@
                 <p>Engineering Degree</p>
             </div>
         </div>
-
         <div class="certifications reveal">
             <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">Professional Certifications</h3>
             <div class="cert-grid">
-                <div class="cert-badge">
-                    <img src="images/cisco1.png" alt="Cisco Certification 1">
-                </div>
-                <div class="cert-badge">
-                    <img src="images/cisco2.png" alt="Cisco Certification 2">
-                </div>
-                <div class="cert-badge">
-                    <img src="images/eccouncil1.png" alt="EC-Council Certification 1">
-                </div>
-                <div class="cert-badge">
-                    <img src="images/eccouncil2.png" alt="EC-Council Certification 2">
-                </div>
+                <div class="cert-badge"><img src="images/cisco1.png" alt="Cisco Certification 1"></div>
+                <div class="cert-badge"><img src="images/cisco2.png" alt="Cisco Certification 2"></div>
+                <div class="cert-badge"><img src="images/eccouncil1.png" alt="EC-Council Certification 1"></div>
+                <div class="cert-badge"><img src="images/eccouncil2.png" alt="EC-Council Certification 2"></div>
             </div>
         </div>
     </section>
@@ -1421,7 +1176,6 @@
     <!-- Work Experience -->
     <section id="experience">
         <h2 class="section-title reveal">Work Experience</h2>
-        
         <div class="timeline">
             <div class="timeline-item reveal">
                 <div class="timeline-content">
@@ -1432,7 +1186,6 @@
                 </div>
                 <div class="timeline-marker"></div>
             </div>
-
             <div class="timeline-item reveal">
                 <div class="timeline-content">
                     <img src="images/company2.png" alt="RND SOFTECH" class="company-logo">
@@ -1442,7 +1195,6 @@
                 </div>
                 <div class="timeline-marker"></div>
             </div>
-
             <div class="timeline-item reveal">
                 <div class="timeline-content">
                     <img src="images/company3.png" alt="Rapido" class="company-logo">
@@ -1452,7 +1204,6 @@
                 </div>
                 <div class="timeline-marker"></div>
             </div>
-
             <div class="timeline-item reveal">
                 <div class="timeline-content">
                     <img src="images/company4.png" alt="KG Invicta" class="company-logo">
@@ -1469,7 +1220,6 @@
     <section id="contact" class="contact">
         <h2 class="section-title">Let's Connect For Business</h2>
         <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #718096; position: relative; z-index: 1;">Ready to collaborate? Reach out through any of these platforms.</p>
-        
         <div class="social-links">
             <a href="https://instagram.com/itskiranprasath" target="_blank" class="social-link" title="Instagram">
                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/%3E%3C/svg%3E" alt="Instagram">
@@ -1532,57 +1282,42 @@
                 charIndex--;
                 setTimeout(type, deletingSpeed);
             } else if (!isDeleting && charIndex === currentText.length + 1) {
-                setTimeout(() => {
-                    isDeleting = true;
-                    type();
-                }, pauseTime);
+                setTimeout(() => { isDeleting = true; type(); }, pauseTime);
             } else if (isDeleting && charIndex === -1) {
                 isDeleting = false;
                 textIndex = (textIndex + 1) % texts.length;
                 setTimeout(type, 500);
             }
         }
-
-        // Start typing animation
         setTimeout(type, 1000);
 
-        // Scroll reveal animation
+        // Scroll reveal
         function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            reveals.forEach(element => {
+            document.querySelectorAll('.reveal').forEach(element => {
                 const windowHeight = window.innerHeight;
                 const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
+                if (elementTop < windowHeight - 150) {
                     element.classList.add('active');
                 }
             });
         }
-
         window.addEventListener('scroll', reveal);
-        reveal(); // Check on load
+        reveal();
 
-        // Smooth scroll for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Particle effect (simple version)
+        // Particles
         const particlesContainer = document.getElementById('particles-js');
-        const particleCount = 50;
-
-        for (let i = 0; i < particleCount; i++) {
+        for (let i = 0; i < 50; i++) {
             const particle = document.createElement('div');
             particle.style.position = 'absolute';
             particle.style.width = Math.random() * 3 + 1 + 'px';
@@ -1596,35 +1331,23 @@
             particlesContainer.appendChild(particle);
         }
 
-        // Add floating particle animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes floatParticle {
-                0%, 100% {
-                    transform: translate(0, 0);
-                    opacity: 0;
-                }
-                10% {
-                    opacity: 1;
-                }
-                90% {
-                    opacity: 1;
-                }
-                100% {
-                    transform: translate(${Math.random() * 100 - 50}px, -100vh);
-                    opacity: 0;
-                }
+                0%, 100% { transform: translate(0, 0); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translate(${Math.random() * 100 - 50}px, -100vh); opacity: 0; }
             }
         `;
         document.head.appendChild(style);
 
-        // Simpler Neural Network with Red Particles
+        // Neural Network Canvas
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas ? canvas.getContext('2d') : null;
         const techNodes = document.querySelectorAll('.tech-node');
-        
+
         if (canvas && ctx) {
-            // Set canvas size
             function resizeCanvas() {
                 const container = document.getElementById('neuralNetworkContainer');
                 if (container) {
@@ -1634,8 +1357,7 @@
             }
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
-            
-            // Get node positions
+
             function getNodePositions() {
                 const positions = [];
                 techNodes.forEach(node => {
@@ -1649,8 +1371,7 @@
                 });
                 return positions;
             }
-            
-            // Red signal particles
+
             class SignalParticle {
                 constructor(startPos, endPos) {
                     this.startX = startPos.x;
@@ -1663,7 +1384,7 @@
                     this.speed = 0.01 + Math.random() * 0.02;
                     this.size = 3 + Math.random() * 3;
                 }
-                
+
                 update() {
                     this.progress += this.speed;
                     if (this.progress >= 1) {
@@ -1671,62 +1392,46 @@
                         this.x = this.startX;
                         this.y = this.startY;
                     }
-                    
                     const easeProgress = this.easeInOutCubic(this.progress);
                     this.x = this.startX + (this.endX - this.startX) * easeProgress;
                     this.y = this.startY + (this.endY - this.startY) * easeProgress;
                 }
-                
+
                 easeInOutCubic(t) {
                     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
                 }
-                
+
                 draw() {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    
-                    // Black gradient for glow
                     const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 3);
                     gradient.addColorStop(0, 'rgba(0, 0, 0, 1)');
                     gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.5)');
                     gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-                    
                     ctx.fillStyle = gradient;
                     ctx.fill();
-                    
-                    // Bright black core
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
                     ctx.fillStyle = '#000000';
                     ctx.fill();
                 }
             }
-            
-            // Create connections and particles
+
             let particles = [];
             let connections = [];
-            
+
             function createConnections() {
                 const positions = getNodePositions();
                 connections = [];
                 particles = [];
-                
-                // Create connections between nearby nodes
+
                 for (let i = 0; i < positions.length; i++) {
                     for (let j = i + 1; j < positions.length; j++) {
                         const dx = positions[i].x - positions[j].x;
                         const dy = positions[i].y - positions[j].y;
                         const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        // Connect nodes within certain distance
                         if (distance < 400) {
-                            connections.push({
-                                start: positions[i],
-                                end: positions[j],
-                                distance: distance
-                            });
-                            
-                            // Create signal particles for this connection
+                            connections.push({ start: positions[i], end: positions[j], distance: distance });
                             if (Math.random() > 0.5) {
                                 particles.push(new SignalParticle(positions[i], positions[j]));
                             }
@@ -1734,29 +1439,19 @@
                     }
                 }
             }
-            
+
             createConnections();
-            window.addEventListener('resize', () => {
-                resizeCanvas();
-                createConnections();
-            });
-            
-            // Animation loop
+            window.addEventListener('resize', () => { resizeCanvas(); createConnections(); });
+
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                // Draw connections with red gradient
+
                 connections.forEach(conn => {
                     const opacity = Math.max(0, 1 - conn.distance / 400) * 0.3;
-                    
-                    const gradient = ctx.createLinearGradient(
-                        conn.start.x, conn.start.y,
-                        conn.end.x, conn.end.y
-                    );
+                    const gradient = ctx.createLinearGradient(conn.start.x, conn.start.y, conn.end.x, conn.end.y);
                     gradient.addColorStop(0, `rgba(0, 0, 0, ${opacity})`);
                     gradient.addColorStop(0.5, `rgba(0, 0, 0, ${opacity * 1.5})`);
                     gradient.addColorStop(1, `rgba(0, 0, 0, ${opacity})`);
-                    
                     ctx.beginPath();
                     ctx.moveTo(conn.start.x, conn.start.y);
                     ctx.lineTo(conn.end.x, conn.end.y);
@@ -1764,34 +1459,27 @@
                     ctx.lineWidth = 2;
                     ctx.stroke();
                 });
-                
-                // Update and draw particles
+
                 particles.forEach(particle => {
                     particle.update();
                     particle.draw();
                 });
-                
+
                 requestAnimationFrame(animate);
             }
-            
+
             animate();
-            
-            // Add hover effects - create particle burst
+
             techNodes.forEach(node => {
                 node.addEventListener('mouseenter', () => {
                     const rect = node.getBoundingClientRect();
                     const containerRect = canvas.getBoundingClientRect();
                     const centerX = rect.left - containerRect.left + rect.width / 2;
                     const centerY = rect.top - containerRect.top + rect.height / 2;
-                    
-                    // Add extra particles emanating from this node
                     const positions = getNodePositions();
                     positions.forEach(pos => {
                         if (pos.element !== node) {
-                            particles.push(new SignalParticle(
-                                { x: centerX, y: centerY },
-                                pos
-                            ));
+                            particles.push(new SignalParticle({ x: centerX, y: centerY }, pos));
                         }
                     });
                 });
