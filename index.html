@@ -35,9 +35,7 @@
             overflow-x: hidden;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         #particles-js {
             position: fixed;
@@ -90,9 +88,7 @@
             transition: transform 0.3s;
         }
 
-        nav .logo:hover img {
-            transform: scale(1.1) rotate(-5deg);
-        }
+        nav .logo:hover img { transform: scale(1.1) rotate(-5deg); }
 
         nav ul {
             display: flex;
@@ -119,14 +115,8 @@
             transition: width 0.3s;
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-            transform: translateY(-2px);
-        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--primary); transform: translateY(-2px); }
 
         .hero {
             min-height: 100vh;
@@ -142,10 +132,7 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="black" opacity="0.03"/></svg>');
             opacity: 0.3;
             animation: moveBackground 20s linear infinite;
@@ -205,7 +192,6 @@
             margin-bottom: 1rem;
             font-weight: 700;
             animation: fadeInUp 1s ease 0.2s both;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
             color: #000;
         }
 
@@ -275,10 +261,8 @@
         .cta-button::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
             border-radius: 50%;
             background: rgba(102, 126, 234, 0.2);
             transform: translate(-50%, -50%);
@@ -369,10 +353,8 @@
         .expertise-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
             transition: left 0.5s;
         }
@@ -392,13 +374,111 @@
             transition: transform 0.3s;
         }
 
-        .expertise-card:hover .expertise-icon {
-            transform: scale(1.2) rotate(360deg);
-        }
-
+        .expertise-card:hover .expertise-icon { transform: scale(1.2) rotate(360deg); }
         .expertise-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-dark); }
         .expertise-card p { color: var(--text-light); font-size: 0.9rem; }
 
+        /* ── Tech Stack Floating Grid ── */
+        #techstack {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 6rem 5%;
+            max-width: 100%;
+        }
+
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-badge {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Each badge floats at a different speed/delay like certs */
+        .skill-badge:nth-child(1)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 0s; }
+        .skill-badge:nth-child(2)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 0.3s; }
+        .skill-badge:nth-child(3)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 0.6s; }
+        .skill-badge:nth-child(4)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 0.9s; }
+        .skill-badge:nth-child(5)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 1.2s; }
+        .skill-badge:nth-child(6)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 1.5s; }
+        .skill-badge:nth-child(7)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 1.8s; }
+        .skill-badge:nth-child(8)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 2.1s; }
+        .skill-badge:nth-child(9)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 2.4s; }
+
+        @keyframes floatSkill {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25%       { transform: translateY(-12px) rotate(3deg); }
+            50%       { transform: translateY(-6px) rotate(-3deg); }
+            75%       { transform: translateY(-16px) rotate(3deg); }
+        }
+
+        /* Star that appears on hover */
+        .skill-badge::before {
+            content: '✨';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 1.3rem;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .skill-badge:hover::before {
+            opacity: 1;
+            transform: rotate(360deg);
+        }
+
+        .skill-img-wrap {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .skill-img-wrap img {
+            width: 65%;
+            height: 65%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover: scale up + glow */
+        .skill-badge:hover .skill-img-wrap {
+            transform: scale(1.2);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.45);
+            border-color: var(--primary);
+        }
+
+        .skill-badge:hover .skill-img-wrap img {
+            transform: scale(1.1);
+        }
+
+        .skill-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        /* Education */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -457,27 +537,29 @@
             75% { transform: translateY(-15px) rotate(5deg); }
         }
 
-       .cert-badge::before {
-    content: '✨';
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    font-size: 1.5rem;
-    opacity: 0;
-    transition: all 0.3s;
-}
+        .cert-badge::before {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s;
+        }
 
-.cert-badge:hover::before {
-    opacity: 1;
-    transform: rotate(360deg);
-}
+        .cert-badge:hover::before {
+            opacity: 1;
+            transform: rotate(360deg);
+        }
 
-.cert-badge:hover {
-    transform: scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.4));
-}
+        .cert-badge:hover {
+            transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.4));
+        }
+
         .cert-badge img { max-width: 120px; height: auto; }
 
+        /* Timeline */
         .timeline { position: relative; padding: 2rem 0; }
 
         .timeline::before {
@@ -515,10 +597,8 @@
         .timeline-content::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
             background: linear-gradient(180deg, var(--primary), var(--secondary));
             transform: scaleY(0);
             transition: transform 0.4s;
@@ -557,6 +637,7 @@
         .timeline-content h3 { color: var(--primary); margin-bottom: 0.5rem; transition: all 0.3s; }
         .timeline-content:hover h3 { transform: translateX(10px); }
 
+        /* Contact */
         .contact {
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             color: #2d3748;
@@ -596,10 +677,8 @@
         .social-link::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             transform: translate(-50%, -50%);
@@ -610,8 +689,7 @@
         .social-link:hover { transform: translateY(-10px) scale(1.15) rotate(360deg); box-shadow: 0 20px 40px rgba(0,0,0,0.15); border-color: var(--primary); }
 
         .social-link img {
-            width: 35px;
-            height: 35px;
+            width: 35px; height: 35px;
             transition: all 0.3s;
             position: relative;
             z-index: 1;
@@ -626,19 +704,10 @@
             padding: 2rem;
         }
 
+        /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes float {
@@ -651,60 +720,6 @@
             50% { transform: translateX(-50%) translateY(-15px); }
         }
 
-        /* Tech Node Styles */
-        .tech-node {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .tech-node:hover {
-            transform: translate(-50%, -50%) scale(1.15);
-            z-index: 100;
-        }
-
-        .node-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border: 2px solid rgba(0, 0, 0, 0.8);
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.15), 0 8px 32px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .tech-node:hover .node-content {
-            border-color: rgba(0, 0, 0, 1);
-            box-shadow: 0 0 40px rgba(0,0,0,0.3), 0 15px 50px rgba(0,0,0,0.2);
-        }
-
-        .node-icon {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .node-icon img {
-            width: 70%;
-            height: 70%;
-            object-fit: cover;
-            border-radius: 0;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .tech-node:hover .node-icon img {
-            transform: scale(1.1);
-        }
-
-        /* Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -716,13 +731,10 @@
             transform: translateY(0);
         }
 
-        /* Loading */
         .loading-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
@@ -734,8 +746,7 @@
         .loading-overlay.hidden { opacity: 0; visibility: hidden; }
 
         .loader {
-            width: 50px;
-            height: 50px;
+            width: 50px; height: 50px;
             border: 5px solid rgba(255,255,255,0.3);
             border-top-color: white;
             border-radius: 50%;
@@ -761,40 +772,19 @@
             .timeline-content { width: 100%; }
             .timeline-marker { left: 20px; }
             section { padding: 3rem 5%; }
-            #techstack { padding: 3rem 2% !important; }
-            #techstack .section-title { font-size: 2rem; margin-bottom: 0.5rem; }
-            #techstack p { font-size: 0.9rem; margin-bottom: 2rem !important; }
-            #neuralNetworkContainer { height: 800px; }
-            .tech-node { width: 85px; height: 85px; }
-            .node-icon img { width: 100%; height: 100%; }
-            .tech-node[data-tech="Networking"] { top: 8% !important;  left: 20% !important; }
-            .tech-node[data-tech="Linux"]      { top: 8% !important;  left: 50% !important; }
-            .tech-node[data-tech="Python"]     { top: 8% !important;  left: 80% !important; }
-            .tech-node[data-tech="Security"]   { top: 36% !important; left: 20% !important; }
-            .tech-node[data-tech="Bash"]       { top: 36% !important; left: 50% !important; }
-            .tech-node[data-tech="Cloud"]      { top: 36% !important; left: 80% !important; }
-            .tech-node[data-tech="Hardware"]   { top: 64% !important; left: 20% !important; }
-            .tech-node[data-tech="Git"]        { top: 64% !important; left: 50% !important; }
-            .tech-node[data-tech="AI/ML"]      { top: 64% !important; left: 80% !important; }
             .hero-image-container { width: 150px; height: 150px; }
             .hero-image { width: 130px; height: 130px; }
             .ring1 { width: 170px; height: 170px; }
             .ring2 { width: 210px; height: 210px; }
             .ring3 { width: 250px; height: 250px; }
+            .skill-img-wrap { width: 90px; height: 90px; }
+            .skill-name { font-size: 0.78rem; }
+            .skill-grid { gap: 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            #neuralNetworkContainer { height: 900px; }
-            .tech-node { width: 75px; height: 75px; }
-            .tech-node[data-tech="Networking"] { top: 6% !important;  left: 18% !important; }
-            .tech-node[data-tech="Linux"]      { top: 6% !important;  left: 50% !important; }
-            .tech-node[data-tech="Python"]     { top: 6% !important;  left: 82% !important; }
-            .tech-node[data-tech="Security"]   { top: 33% !important; left: 18% !important; }
-            .tech-node[data-tech="Bash"]       { top: 33% !important; left: 50% !important; }
-            .tech-node[data-tech="Cloud"]      { top: 33% !important; left: 82% !important; }
-            .tech-node[data-tech="Hardware"]   { top: 60% !important; left: 18% !important; }
-            .tech-node[data-tech="Git"]        { top: 60% !important; left: 50% !important; }
-            .tech-node[data-tech="AI/ML"]      { top: 60% !important; left: 82% !important; }
+            .skill-img-wrap { width: 75px; height: 75px; }
+            .skill-grid { gap: 1rem; }
         }
     </style>
 </head>
@@ -878,66 +868,75 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section id="techstack" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); padding: 6rem 5%; position: relative; overflow: hidden;">
+    <section id="techstack">
         <h2 class="section-title reveal" style="color: #2d3748;">Core Stack</h2>
         <p style="text-align: center; color: #718096; margin-bottom: 3rem; font-size: 1.1rem;">Stack Visualization</p>
 
-        <div id="neuralNetworkContainer" style="position: relative; width: 100%; height: 600px; max-width: 1200px; margin: 0 auto;">
-            <canvas id="networkCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+        <div class="skill-grid reveal">
 
-            <div class="tech-node" data-tech="Networking" style="top: 15%; left: 20%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/networking.png" alt="Networking"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/networking.png" alt="Networking">
                 </div>
+                <span class="skill-name">Networking</span>
             </div>
 
-            <div class="tech-node" data-tech="Linux" style="top: 15%; left: 50%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/linux.png" alt="Linux"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/linux.png" alt="Linux">
                 </div>
+                <span class="skill-name">Linux</span>
             </div>
 
-            <div class="tech-node" data-tech="Python" style="top: 15%; left: 80%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/python.png" alt="Python"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/python.png" alt="Python">
                 </div>
+                <span class="skill-name">Python</span>
             </div>
 
-            <div class="tech-node" data-tech="Security" style="top: 45%; left: 10%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/security.png" alt="Security"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/security.png" alt="Security">
                 </div>
+                <span class="skill-name">Security</span>
             </div>
 
-            <div class="tech-node" data-tech="Bash" style="top: 45%; left: 35%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/bash.png" alt="Bash"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/bash.png" alt="Bash">
                 </div>
+                <span class="skill-name">Bash</span>
             </div>
 
-            <div class="tech-node" data-tech="Cloud" style="top: 45%; left: 62%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/cloud.png" alt="Cloud"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/cloud.png" alt="Cloud">
                 </div>
+                <span class="skill-name">Cloud</span>
             </div>
 
-            <div class="tech-node" data-tech="Hardware" style="top: 45%; left: 88%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/hardware.png" alt="Hardware"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/hardware.png" alt="Hardware">
                 </div>
+                <span class="skill-name">Hardware</span>
             </div>
 
-            <div class="tech-node" data-tech="Git" style="top: 75%; left: 30%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/git.png" alt="Git"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/git.png" alt="Git">
                 </div>
+                <span class="skill-name">Git</span>
             </div>
 
-            <div class="tech-node" data-tech="AI/ML" style="top: 75%; left: 65%;">
-                <div class="node-content">
-                    <div class="node-icon"><img src="images/aiml.png" alt="AI/ML"></div>
+            <div class="skill-badge">
+                <div class="skill-img-wrap">
+                    <img src="images/aiml.png" alt="AI/ML">
                 </div>
+                <span class="skill-name">AI/ML</span>
             </div>
+
         </div>
     </section>
 
@@ -1040,14 +1039,10 @@
             }, 1000);
         });
 
-        // Navbar scroll effect
+        // Navbar scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 100);
         });
 
         // Typing animation
@@ -1056,26 +1051,19 @@
             'Breaking systems. Building solutions.',
             'Technology × Finance × Adventure'
         ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseTime = 2000;
+        let textIndex = 0, charIndex = 0, isDeleting = false;
 
         function type() {
             const currentText = texts[textIndex];
-            const typingElement = document.getElementById('typingText');
+            const el = document.getElementById('typingText');
             if (!isDeleting && charIndex <= currentText.length) {
-                typingElement.innerHTML = currentText.substring(0, charIndex) + '<span class="cursor"></span>';
-                charIndex++;
-                setTimeout(type, typingSpeed);
+                el.innerHTML = currentText.substring(0, charIndex++) + '<span class="cursor"></span>';
+                setTimeout(type, 100);
             } else if (isDeleting && charIndex >= 0) {
-                typingElement.innerHTML = currentText.substring(0, charIndex) + '<span class="cursor"></span>';
-                charIndex--;
-                setTimeout(type, deletingSpeed);
+                el.innerHTML = currentText.substring(0, charIndex--) + '<span class="cursor"></span>';
+                setTimeout(type, 50);
             } else if (!isDeleting && charIndex === currentText.length + 1) {
-                setTimeout(() => { isDeleting = true; type(); }, pauseTime);
+                setTimeout(() => { isDeleting = true; type(); }, 2000);
             } else if (isDeleting && charIndex === -1) {
                 isDeleting = false;
                 textIndex = (textIndex + 1) % texts.length;
@@ -1086,11 +1074,9 @@
 
         // Scroll reveal
         function reveal() {
-            document.querySelectorAll('.reveal').forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) {
-                    element.classList.add('active');
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 150) {
+                    el.classList.add('active');
                 }
             });
         }
@@ -1109,166 +1095,14 @@
         // Particles
         const particlesContainer = document.getElementById('particles-js');
         for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.style.position = 'absolute';
-            particle.style.width = Math.random() * 3 + 1 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.background = 'rgba(255,255,255,0.5)';
-            particle.style.borderRadius = '50%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animation = `floatParticle ${Math.random() * 10 + 5}s linear infinite`;
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            particlesContainer.appendChild(particle);
+            const p = document.createElement('div');
+            const size = Math.random() * 3 + 1 + 'px';
+            p.style.cssText = `position:absolute;width:${size};height:${size};background:rgba(255,255,255,0.5);border-radius:50%;top:${Math.random()*100}%;left:${Math.random()*100}%;animation:floatParticle ${Math.random()*10+5}s linear infinite;animation-delay:${Math.random()*5}s`;
+            particlesContainer.appendChild(p);
         }
-
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes floatParticle {
-                0%, 100% { transform: translate(0, 0); opacity: 0; }
-                10% { opacity: 1; }
-                90% { opacity: 1; }
-                100% { transform: translate(${Math.random() * 100 - 50}px, -100vh); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Neural Network Canvas
-        const canvas = document.getElementById('networkCanvas');
-        const ctx = canvas ? canvas.getContext('2d') : null;
-        const techNodes = document.querySelectorAll('.tech-node');
-
-        if (canvas && ctx) {
-            function resizeCanvas() {
-                const container = document.getElementById('neuralNetworkContainer');
-                if (container) {
-                    canvas.width = container.offsetWidth;
-                    canvas.height = container.offsetHeight;
-                }
-            }
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-
-            function getNodePositions() {
-                const positions = [];
-                techNodes.forEach(node => {
-                    const rect = node.getBoundingClientRect();
-                    const containerRect = canvas.getBoundingClientRect();
-                    positions.push({
-                        x: rect.left - containerRect.left + rect.width / 2,
-                        y: rect.top - containerRect.top + rect.height / 2,
-                        element: node
-                    });
-                });
-                return positions;
-            }
-
-            class SignalParticle {
-                constructor(startPos, endPos) {
-                    this.startX = startPos.x;
-                    this.startY = startPos.y;
-                    this.endX = endPos.x;
-                    this.endY = endPos.y;
-                    this.x = this.startX;
-                    this.y = this.startY;
-                    this.progress = 0;
-                    this.speed = 0.01 + Math.random() * 0.02;
-                    this.size = 3 + Math.random() * 3;
-                }
-
-                update() {
-                    this.progress += this.speed;
-                    if (this.progress >= 1) {
-                        this.progress = 0;
-                        this.x = this.startX;
-                        this.y = this.startY;
-                    }
-                    const ep = this.easeInOutCubic(this.progress);
-                    this.x = this.startX + (this.endX - this.startX) * ep;
-                    this.y = this.startY + (this.endY - this.startY) * ep;
-                }
-
-                easeInOutCubic(t) {
-                    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 3);
-                    gradient.addColorStop(0, 'rgba(0, 0, 0, 1)');
-                    gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.5)');
-                    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-                    ctx.fillStyle = gradient;
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
-                    ctx.fillStyle = '#000000';
-                    ctx.fill();
-                }
-            }
-
-            let particles = [];
-            let connections = [];
-
-            function createConnections() {
-                const positions = getNodePositions();
-                connections = [];
-                particles = [];
-                for (let i = 0; i < positions.length; i++) {
-                    for (let j = i + 1; j < positions.length; j++) {
-                        const dx = positions[i].x - positions[j].x;
-                        const dy = positions[i].y - positions[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        if (distance < 400) {
-                            connections.push({ start: positions[i], end: positions[j], distance });
-                            if (Math.random() > 0.5) {
-                                particles.push(new SignalParticle(positions[i], positions[j]));
-                            }
-                        }
-                    }
-                }
-            }
-
-            createConnections();
-            window.addEventListener('resize', () => { resizeCanvas(); createConnections(); });
-
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                connections.forEach(conn => {
-                    const opacity = Math.max(0, 1 - conn.distance / 400) * 0.3;
-                    const gradient = ctx.createLinearGradient(conn.start.x, conn.start.y, conn.end.x, conn.end.y);
-                    gradient.addColorStop(0, `rgba(0, 0, 0, ${opacity})`);
-                    gradient.addColorStop(0.5, `rgba(0, 0, 0, ${opacity * 1.5})`);
-                    gradient.addColorStop(1, `rgba(0, 0, 0, ${opacity})`);
-                    ctx.beginPath();
-                    ctx.moveTo(conn.start.x, conn.start.y);
-                    ctx.lineTo(conn.end.x, conn.end.y);
-                    ctx.strokeStyle = gradient;
-                    ctx.lineWidth = 2;
-                    ctx.stroke();
-                });
-                particles.forEach(p => { p.update(); p.draw(); });
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-
-            techNodes.forEach(node => {
-                node.addEventListener('mouseenter', () => {
-                    const rect = node.getBoundingClientRect();
-                    const containerRect = canvas.getBoundingClientRect();
-                    const centerX = rect.left - containerRect.left + rect.width / 2;
-                    const centerY = rect.top - containerRect.top + rect.height / 2;
-                    const positions = getNodePositions();
-                    positions.forEach(pos => {
-                        if (pos.element !== node) {
-                            particles.push(new SignalParticle({ x: centerX, y: centerY }, pos));
-                        }
-                    });
-                });
-            });
-        }
+        const s = document.createElement('style');
+        s.textContent = `@keyframes floatParticle{0%,100%{transform:translate(0,0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translate(${Math.random()*100-50}px,-100vh);opacity:0}}`;
+        document.head.appendChild(s);
     </script>
 </body>
 </html>
