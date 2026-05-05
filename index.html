@@ -404,7 +404,6 @@
             cursor: pointer;
         }
 
-        /* Each badge floats at a different speed/delay like certs */
         .skill-badge:nth-child(1)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 0s; }
         .skill-badge:nth-child(2)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 0.3s; }
         .skill-badge:nth-child(3)  { animation: floatSkill 4s ease-in-out infinite; animation-delay: 0.6s; }
@@ -426,7 +425,6 @@
             75%       { transform: translateY(-16px) rotate(3deg); }
         }
 
-        /* Star that appears on hover */
         .skill-badge::before {
             content: '✨';
             position: absolute;
@@ -464,7 +462,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* Hover: scale up + glow */
         .skill-badge:hover .skill-img-wrap {
             transform: scale(1.2);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.45);
@@ -759,6 +756,161 @@
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* ── World Clock Section ── */
+        #worldclock {
+            max-width: 100%;
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        #worldclock .section-title {
+            color: var(--text-dark);
+        }
+
+        .wc-toggle-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        .wc-toggle-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            transition: color 0.2s;
+        }
+
+        .wc-toggle-label.active { color: var(--text-dark); }
+
+        .wc-toggle-track {
+            width: 48px;
+            height: 26px;
+            border-radius: 13px;
+            background: #e2e8f0;
+            border: 1px solid #cbd5e0;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+            flex-shrink: 0;
+        }
+
+        .wc-toggle-track.on {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--primary);
+        }
+
+        .wc-toggle-thumb {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .wc-toggle-track.on .wc-toggle-thumb { transform: translateX(22px); }
+
+        .wc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+            gap: 16px;
+            max-width: 1020px;
+            margin: 0 auto;
+        }
+
+        .wc-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.2rem 0.8rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: default;
+            position: relative;
+            border: 1.5px solid transparent;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .wc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .wc-card.day-pulse  { animation: wcDay  3s ease-in-out infinite; }
+        .wc-card.night-pulse{ animation: wcNight 3s ease-in-out infinite; }
+
+        @keyframes wcDay {
+            0%,100% { box-shadow: 0 4px 20px rgba(0,0,0,.07), 0 0 0 0 rgba(255,200,50,0),   inset 0 0 0 1.5px rgba(240,180,40,.2);  }
+            30%     { box-shadow: 0 4px 20px rgba(0,0,0,.07), 0 0 0 6px rgba(255,200,50,.16), inset 0 0 0 1.5px rgba(240,180,40,.55); }
+            60%     { box-shadow: 0 4px 20px rgba(0,0,0,.07), 0 0 0 12px rgba(255,200,50,.06),inset 0 0 0 1.5px rgba(240,180,40,.32); }
+        }
+
+        @keyframes wcNight {
+            0%,100% { box-shadow: 0 4px 20px rgba(0,0,0,.07), 0 0 0 0 rgba(40,50,120,0),    inset 0 0 0 1.5px rgba(80,100,200,.12); }
+            30%     { box-shadow: 0 4px 20px rgba(0,0,0,.07), 0 0 0 6px rgba(40,50,120,.2),  inset 0 0 0 1.5px rgba(100,130,230,.42); }
+            60%     { box-shadow: 0 4px 20px rgba(0,0,0,.07), 0 0 0 12px rgba(40,50,120,.08),inset 0 0 0 1.5px rgba(100,130,230,.24); }
+        }
+
+        .wc-accent-bar {
+            width: 28px;
+            height: 3px;
+            border-radius: 2px;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        .wc-city-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 9px;
+            text-align: center;
+        }
+
+        .wc-city-tz {
+            font-size: 10px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 2px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .wc-city-digital {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+            margin-top: 5px;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.3px;
+        }
+
+        .wc-city-date {
+            font-size: 10px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        .wc-day-badge {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 8px;
+            margin-top: 6px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul { display: none; }
@@ -784,11 +936,18 @@
             .skill-img-wrap { width: 90px; height: 90px; }
             .skill-name { font-size: 0.78rem; }
             .skill-grid { gap: 1.5rem; }
+            .wc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            #worldclock { padding: 3rem 4%; }
+            .wc-card { padding: 1rem .6rem .8rem; }
         }
 
         @media (max-width: 480px) {
             .skill-img-wrap { width: 75px; height: 75px; }
             .skill-grid { gap: 1rem; }
+            .wc-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .wc-card { padding: .9rem .5rem .7rem; border-radius: 14px; }
+            .wc-city-name { font-size: 12px; }
+            .wc-city-digital { font-size: 13px; }
         }
     </style>
 </head>
@@ -876,100 +1035,20 @@
     <section id="techstack">
         <h2 class="section-title reveal" style="color: #2d3748;">Core Stack</h2>
         <p style="text-align: center; color: #718096; margin-bottom: 3rem; font-size: 1.1rem;">Stack Visualization</p>
-
         <div class="skill-grid reveal">
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/networking.png" alt="Networking">
-                </div>
-                <span class="skill-name">Networking</span>
-            </div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/linux.png" alt="Linux">
-                </div>
-                <span class="skill-name">Linux</span>
-            </div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/python.png" alt="Python">
-                </div>
-                <span class="skill-name">Python</span>
-            </div>
-
-            <div class="skill-badge">
-    <div class="skill-img-wrap">
-        <img src="images/html.png" alt="HTML">
-    </div>
-    <span class="skill-name">HTML</span>
-</div>
-
-<div class="skill-badge">
-    <div class="skill-img-wrap">
-        <img src="images/css.png" alt="CSS">
-    </div>
-    <span class="skill-name">CSS</span>
-</div>
-
-<div class="skill-badge">
-    <div class="skill-img-wrap">
-        <img src="images/javascript.png" alt="JavaScript">
-    </div>
-    <span class="skill-name">JavaScript</span>
-</div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/security.png" alt="Security">
-                </div>
-                <span class="skill-name">Security</span>
-            </div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/bash.png" alt="Bash">
-                </div>
-                <span class="skill-name">Bash</span>
-            </div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/cloud.png" alt="Cloud">
-                </div>
-                <span class="skill-name">Cloud</span>
-            </div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/hardware.png" alt="Hardware">
-                </div>
-                <span class="skill-name">Hardware</span>
-            </div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/git.png" alt="Git">
-                </div>
-                <span class="skill-name">Git</span>
-            </div>
-
-            <div class="skill-badge">
-                <div class="skill-img-wrap">
-                    <img src="images/aiml.png" alt="AI/ML">
-                </div>
-                <span class="skill-name">AI/ML</span>
-            </div>
-
-            <div class="skill-badge">
-    <div class="skill-img-wrap">
-        <img src="images/trading.png" alt="Trading">
-    </div>
-    <span class="skill-name">Trading</span>
-</div>
-
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/networking.png" alt="Networking"></div><span class="skill-name">Networking</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/linux.png" alt="Linux"></div><span class="skill-name">Linux</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/python.png" alt="Python"></div><span class="skill-name">Python</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/html.png" alt="HTML"></div><span class="skill-name">HTML</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/css.png" alt="CSS"></div><span class="skill-name">CSS</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/javascript.png" alt="JavaScript"></div><span class="skill-name">JavaScript</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/security.png" alt="Security"></div><span class="skill-name">Security</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/bash.png" alt="Bash"></div><span class="skill-name">Bash</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/cloud.png" alt="Cloud"></div><span class="skill-name">Cloud</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/hardware.png" alt="Hardware"></div><span class="skill-name">Hardware</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/git.png" alt="Git"></div><span class="skill-name">Git</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/aiml.png" alt="AI/ML"></div><span class="skill-name">AI/ML</span></div>
+            <div class="skill-badge"><div class="skill-img-wrap"><img src="images/trading.png" alt="Trading"></div><span class="skill-name">Trading</span></div>
         </div>
     </section>
 
@@ -1042,26 +1121,22 @@
         </div>
     </section>
 
-    <!-- ===== WORLD CLOCK SECTION ===== -->
-<section id="worldclock" style="padding:5rem 1.5rem;text-align:center;">
+    <!-- ── World Clock Section ── -->
+    <section id="worldclock">
+        <h2 class="section-title reveal">World Clock</h2>
+        <p style="text-align:center;color:var(--text-light);margin-top:-1.5rem;margin-bottom:2rem;font-size:1rem;letter-spacing:.5px;">Live times around the globe</p>
 
-  <h2 style="font-size:26px;font-weight:600;margin-bottom:.4rem;">World Clock</h2>
-  <p style="font-size:11px;letter-spacing:1.8px;text-transform:uppercase;opacity:.5;margin-bottom:1.5rem;">Live times around the globe</p>
+        <!-- 12 / 24 hr toggle -->
+        <div class="wc-toggle-wrap">
+            <span class="wc-toggle-label active" id="wc-lbl12">12 HR</span>
+            <div class="wc-toggle-track" id="wc-toggle" onclick="wcFlip()">
+                <div class="wc-toggle-thumb"></div>
+            </div>
+            <span class="wc-toggle-label" id="wc-lbl24">24 HR</span>
+        </div>
 
-  <!-- 12/24hr toggle -->
-  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:2rem;">
-    <span id="lbl12" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:1;transition:opacity .2s;">12 HR</span>
-    <div id="wc-toggle" onclick="wcFlip()" style="width:48px;height:26px;border-radius:13px;background:#333;border:1px solid #444;position:relative;cursor:pointer;transition:background .3s;flex-shrink:0;">
-      <div id="wc-thumb" style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.4);transition:transform .25s cubic-bezier(.4,0,.2,1);"></div>
-    </div>
-    <span id="lbl24" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.4;transition:opacity .2s;">24 HR</span>
-  </div>
-
-  <!-- clock grid -->
-  <div id="wc-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:14px;max-width:1020px;margin:0 auto;"></div>
-
-</section>
-<!-- ===== END WORLD CLOCK ===== -->
+        <div class="wc-grid reveal" id="wc-grid"></div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1157,188 +1232,250 @@
         const s = document.createElement('style');
         s.textContent = `@keyframes floatParticle{0%,100%{transform:translate(0,0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translate(${Math.random()*100-50}px,-100vh);opacity:0}}`;
         document.head.appendChild(s);
+
+        // ── World Clock (HiDPI / Retina fix) ────────────────────────
+        (function() {
+            // CSS display size — what the user sees
+            const CSS = window.innerWidth <= 480 ? 150 : 140;
+            // Device pixel ratio — 2 on Retina/AMOLED, 3 on high-end phones
+            const DPR = Math.min(window.devicePixelRatio || 1, 3);
+            // Internal draw size — multiply by DPR for crispness
+            const SIZE = CSS * DPR;
+            const CX = SIZE / 2, CY = SIZE / 2, R = SIZE / 2 - 6 * DPR;
+
+            let use24 = false;
+
+            window.wcFlip = function() {
+                use24 = !use24;
+                const t = document.getElementById('wc-toggle');
+                t.classList.toggle('on', use24);
+                document.getElementById('wc-lbl12').classList.toggle('active', !use24);
+                document.getElementById('wc-lbl24').classList.toggle('active', use24);
+            };
+
+            const cities = [
+                { name:'India',       label:'IST',     tz:'Asia/Kolkata',       color:'#FF7A30' },
+                { name:'Dubai',       label:'GST',     tz:'Asia/Dubai',         color:'#F0B429' },
+                { name:'London',      label:'GMT/BST', tz:'Europe/London',      color:'#0066ff' },
+                { name:'New York',    label:'EST/EDT', tz:'America/New_York',   color:'#9B7CF8' },
+                { name:'Sydney',      label:'AEST',    tz:'Australia/Sydney',   color:'#00d4ff' },
+                { name:'New Zealand', label:'NZST',    tz:'Pacific/Auckland',   color:'#34C66A' },
+                { name:'Japan',       label:'JST',     tz:'Asia/Tokyo',         color:'#F05A5A' },
+            ];
+
+            function getPhase(h) {
+                if (h>=21||h<5)  return {sky:'#0b1530',face:'rgba(8,14,40,.85)',  stars:true, night:true, label:'Night',   lc:'#1e2d66',lt:'#8eb3f8',pulse:'night'};
+                if (h>=5&&h<7)   return {sky:'#e8834a',face:'rgba(255,248,230,.80)',stars:false,night:false,label:'Sunrise', lc:'#c45a1a',lt:'#7a3010',pulse:'day'};
+                if (h>=7&&h<9)   return {sky:'#f5d68a',face:'rgba(255,252,235,.82)',stars:false,night:false,label:'Morning', lc:'#c89020',lt:'#7a5a10',pulse:'day'};
+                if (h>=9&&h<17)  return {sky:'#a8d8f0',face:'rgba(255,255,255,.82)',stars:false,night:false,label:'Day',     lc:'#2080b0',lt:'#0a4060',pulse:'day'};
+                if (h>=17&&h<19) return {sky:'#f0874a',face:'rgba(255,245,235,.80)',stars:false,night:false,label:'Sunset',  lc:'#c04818',lt:'#6a2808',pulse:'day'};
+                if (h>=19&&h<21) return {sky:'#2a1a5e',face:'rgba(12,8,38,.84)',  stars:true, night:true, label:'Dusk',    lc:'#3a2090',lt:'#b89af8',pulse:'night'};
+                return {sky:'#0b1530',face:'rgba(8,14,40,.85)',stars:true,night:true,label:'Night',lc:'#1e2d66',lt:'#8eb3f8',pulse:'night'};
+            }
+
+            function drawClock(canvas, color) {
+                const now    = new Date();
+                const tzDate = new Date(now.toLocaleString('en-US', {timeZone: canvas.dataset.tz}));
+                const h = tzDate.getHours(), m = tzDate.getMinutes(), s = tzDate.getSeconds();
+
+                // ── HiDPI setup — runs once per canvas ──────────────
+                if (!canvas._dprSet) {
+                    canvas.width        = SIZE;
+                    canvas.height       = SIZE;
+                    canvas.style.width  = CSS + 'px';
+                    canvas.style.height = CSS + 'px';
+                    canvas._dprSet      = true;
+                }
+
+                const ctx = canvas.getContext('2d');
+                // Reset transform each frame so DPR scale is always correct
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.clearRect(0, 0, SIZE, SIZE);
+                // From here all coordinates are in "CSS pixels" — DPR handled by transform
+                ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+                // All draw calls below use CSS-pixel coordinates (SIZE/DPR = CSS)
+                const cx = CSS / 2, cy = CSS / 2, r = CSS / 2 - 6;
+                const ph = getPhase(h);
+
+                // ── Sky background ───────────────────────────────────
+                ctx.save();
+                ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.clip();
+                ctx.fillStyle = ph.sky; ctx.fillRect(0, 0, CSS, CSS);
+
+                // Stars
+                if (ph.stars) {
+                    const sd=[[18,15,.9],[52,8,.7],[82,20,.8],[28,38,.6],[68,6,.9],[88,32,.7],[12,52,.7],[76,44,.8],[44,58,.6],[8,67,.9],[87,62,.7],[56,26,.8],[34,72,.6],[62,78,.7],[20,85,.8]];
+                    ctx.fillStyle = 'rgba(255,255,255,.9)';
+                    for (const [sx,sy,sr] of sd) {
+                        ctx.beginPath();
+                        ctx.arc(sx/100*CSS, sy/100*CSS, sr, 0, Math.PI*2);
+                        ctx.fill();
+                    }
+                }
+
+                // Sun
+                if (!ph.night && h>=6 && h<=18) {
+                    const frac = (h - 6 + m/60) / 12;
+                    const sx2 = cx + Math.cos(Math.PI + frac*Math.PI) * r * 0.55;
+                    const sy2 = cy + Math.sin(Math.PI + frac*Math.PI) * r * 0.52;
+                    const sg  = ctx.createRadialGradient(sx2, sy2, 1, sx2, sy2, 11);
+                    sg.addColorStop(0, '#fff8c0'); sg.addColorStop(.5, '#ffcc44'); sg.addColorStop(1, 'rgba(255,160,0,0)');
+                    ctx.beginPath(); ctx.arc(sx2, sy2, 11, 0, Math.PI*2); ctx.fillStyle = sg; ctx.fill();
+                } else if (ph.night) {
+                    // Moon
+                    const mx = cx + r*0.28, my = cy - r*0.4;
+                    ctx.beginPath(); ctx.arc(mx, my, 8, 0, Math.PI*2); ctx.fillStyle = '#e8e4b0'; ctx.fill();
+                    ctx.beginPath(); ctx.arc(mx+5, my-2, 6.5, 0, Math.PI*2); ctx.fillStyle = ph.sky; ctx.fill();
+                    const mg = ctx.createRadialGradient(mx, my, 3, mx, my, 14);
+                    mg.addColorStop(0, 'rgba(230,220,140,.2)'); mg.addColorStop(1, 'transparent');
+                    ctx.beginPath(); ctx.arc(mx, my, 14, 0, Math.PI*2); ctx.fillStyle = mg; ctx.fill();
+                }
+
+                // Face overlay
+                ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.fillStyle = ph.face; ctx.fill();
+                ctx.restore();
+
+                // ── Outer colour ring ────────────────────────────────
+                ctx.save();
+                ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+                ctx.strokeStyle = color; ctx.lineWidth = 2.8; ctx.stroke();
+                ctx.restore();
+
+                // ── Tick marks (60 ticks, 4 quarter, 12 hour, 44 minute) ──
+                const tc = ph.night ? 'rgba(255,255,255,' : 'rgba(0,0,0,';
+                for (let i = 0; i < 60; i++) {
+                    const angle = (i/60)*Math.PI*2 - Math.PI/2;
+                    const isQ = i%15===0, isH = i%5===0;
+                    // Quarter ticks are longer and bolder
+                    const r1 = isQ ? r-13 : isH ? r-9 : r-5;
+                    ctx.beginPath();
+                    ctx.moveTo(cx + Math.cos(angle)*r1,     cy + Math.sin(angle)*r1);
+                    ctx.lineTo(cx + Math.cos(angle)*(r-2),  cy + Math.sin(angle)*(r-2));
+                    ctx.strokeStyle = isQ ? tc+'0.85)' : isH ? tc+'0.55)' : tc+'0.22)';
+                    ctx.lineWidth   = isQ ? 2.2 : isH ? 1.6 : 1.0;
+                    ctx.lineCap     = 'round';
+                    ctx.stroke();
+                }
+
+                // ── Hour numbers 12, 3, 6, 9 ────────────────────────
+                ctx.save();
+                ctx.font           = `700 ${Math.round(CSS*0.105)}px 'Segoe UI',system-ui,sans-serif`;
+                ctx.textAlign      = 'center';
+                ctx.textBaseline   = 'middle';
+                ctx.fillStyle      = ph.night ? 'rgba(255,255,255,.88)' : 'rgba(0,0,0,.65)';
+                for (const {n,a} of [{n:'12',a:-Math.PI/2},{n:'3',a:0},{n:'6',a:Math.PI/2},{n:'9',a:Math.PI}]) {
+                    ctx.fillText(n, cx + Math.cos(a)*(r-20), cy + Math.sin(a)*(r-20));
+                }
+                ctx.restore();
+
+                const secFrac = s + now.getMilliseconds()/1000;
+
+                // ── Hour hand ────────────────────────────────────────
+                const hAngle = ((h%12) + m/60 + s/3600) / 12 * Math.PI*2 - Math.PI/2;
+                ctx.save(); ctx.lineCap = 'round';
+                // Shadow for depth
+                ctx.shadowColor   = 'rgba(0,0,0,0.25)';
+                ctx.shadowBlur    = 4;
+                ctx.shadowOffsetX = 1; ctx.shadowOffsetY = 1;
+                ctx.beginPath();
+                ctx.moveTo(cx - Math.cos(hAngle)*7,       cy - Math.sin(hAngle)*7);
+                ctx.lineTo(cx + Math.cos(hAngle)*(r*0.5), cy + Math.sin(hAngle)*(r*0.5));
+                ctx.strokeStyle = ph.night ? 'rgba(255,255,255,.97)' : 'rgba(15,15,15,.92)';
+                ctx.lineWidth   = 4.5;
+                ctx.stroke();
+                ctx.restore();
+
+                // ── Minute hand ──────────────────────────────────────
+                const mAngle = (m + s/60) / 60 * Math.PI*2 - Math.PI/2;
+                ctx.save(); ctx.lineCap = 'round';
+                ctx.shadowColor   = 'rgba(0,0,0,0.2)';
+                ctx.shadowBlur    = 3;
+                ctx.shadowOffsetX = 1; ctx.shadowOffsetY = 1;
+                ctx.beginPath();
+                ctx.moveTo(cx - Math.cos(mAngle)*8,        cy - Math.sin(mAngle)*8);
+                ctx.lineTo(cx + Math.cos(mAngle)*(r*0.7),  cy + Math.sin(mAngle)*(r*0.7));
+                ctx.strokeStyle = ph.night ? 'rgba(255,255,255,.92)' : 'rgba(15,15,15,.88)';
+                ctx.lineWidth   = 2.8;
+                ctx.stroke();
+                ctx.restore();
+
+                // ── Second hand (smooth sweep) ───────────────────────
+                const sAngle = secFrac / 60 * Math.PI*2 - Math.PI/2;
+                ctx.save(); ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(cx - Math.cos(sAngle)*15, cy - Math.sin(sAngle)*15);
+                ctx.lineTo(cx + Math.cos(sAngle)*(r*0.78), cy + Math.sin(sAngle)*(r*0.78));
+                ctx.strokeStyle = color; ctx.lineWidth = 1.5; ctx.stroke();
+                ctx.restore();
+
+                // ── Center jewel ─────────────────────────────────────
+                // Outer ring
+                ctx.beginPath(); ctx.arc(cx, cy, 5.5, 0, Math.PI*2);
+                ctx.fillStyle = ph.night ? 'rgba(255,255,255,.97)' : 'rgba(15,15,15,.92)';
+                ctx.fill();
+                // Inner color dot
+                ctx.beginPath(); ctx.arc(cx, cy, 3, 0, Math.PI*2);
+                ctx.fillStyle = color; ctx.fill();
+
+                // ── Store metadata ───────────────────────────────────
+                const fmt = use24
+                    ? tzDate.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false})
+                    : tzDate.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true});
+                canvas.dataset.time  = fmt;
+                canvas.dataset.date  = tzDate.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
+                canvas.dataset.pulse = ph.pulse;
+                canvas.dataset.label = ph.label;
+                canvas.dataset.lc    = ph.lc;
+                canvas.dataset.lt    = ph.lt;
+            }
+
+            function render() {
+                document.querySelectorAll('.wc-canvas').forEach(canvas => {
+                    const card = canvas.closest('.wc-card');
+                    drawClock(canvas, canvas.dataset.color);
+                    card.querySelector('.wc-city-digital').textContent = canvas.dataset.time;
+                    card.querySelector('.wc-city-date').textContent    = canvas.dataset.date;
+                    const badge = card.querySelector('.wc-day-badge');
+                    badge.textContent      = canvas.dataset.label;
+                    badge.style.background = canvas.dataset.lc;
+                    badge.style.color      = canvas.dataset.lt;
+                    const p = canvas.dataset.pulse;
+                    card.classList.toggle('day-pulse',   p === 'day');
+                    card.classList.toggle('night-pulse', p === 'night');
+                });
+            }
+
+            // Build cards — no width/height on canvas element; JS controls it
+            const grid = document.getElementById('wc-grid');
+            cities.forEach(city => {
+                const card = document.createElement('div');
+                card.className = 'wc-card';
+
+                const bar = document.createElement('div');
+                bar.className        = 'wc-accent-bar';
+                bar.style.background = city.color;
+                card.appendChild(bar);
+
+                card.innerHTML += `
+                    <canvas class="wc-canvas"
+                        data-tz="${city.tz}" data-color="${city.color}"
+                        data-time="" data-date="" data-label="" data-lc="" data-lt="" data-pulse=""
+                        style="border-radius:50%;display:block;"></canvas>
+                    <div class="wc-city-name">${city.name}</div>
+                    <div class="wc-city-tz">${city.label}</div>
+                    <div class="wc-city-digital"></div>
+                    <div class="wc-city-date"></div>
+                    <div class="wc-day-badge"></div>
+                `;
+
+                card.querySelector('canvas').before(bar);
+                grid.appendChild(card);
+            });
+
+            (function loop() { render(); requestAnimationFrame(loop); })();
+        })();
+        // ── End World Clock ──────────────────────────────────────────
     </script>
-
-    <script>
-(function(){
-  const SIZE=130,CX=SIZE/2,CY=SIZE/2,R=SIZE/2-5;
-  let use24=false;
-
-  window.wcFlip=function(){
-    use24=!use24;
-    document.getElementById("wc-toggle").style.background=use24?"#4E9AF1":"#333";
-    document.getElementById("wc-thumb").style.transform=use24?"translateX(22px)":"translateX(0)";
-    document.getElementById("lbl12").style.opacity=use24?.4:1;
-    document.getElementById("lbl24").style.opacity=use24?1:.4;
-  };
-
-  const cities=[
-    {name:"India",      label:"IST",     tz:"Asia/Kolkata",     color:"#FF7A30"},
-    {name:"Dubai",      label:"GST",     tz:"Asia/Dubai",       color:"#F0B429"},
-    {name:"London",     label:"GMT/BST", tz:"Europe/London",    color:"#4E9AF1"},
-    {name:"New York",   label:"EST/EDT", tz:"America/New_York", color:"#9B7CF8"},
-    {name:"Sydney",     label:"AEST",    tz:"Australia/Sydney", color:"#1DB89A"},
-    {name:"New Zealand",label:"NZST",    tz:"Pacific/Auckland", color:"#34C66A"},
-    {name:"Japan",      label:"JST",     tz:"Asia/Tokyo",       color:"#F05A5A"},
-  ];
-
-  function getPhase(h){
-    if(h>=21||h<5)  return{sky:"#0b1530",face:"rgba(8,14,40,.85)",stars:true,night:true,label:"Night",lc:"#1e2d66",lt:"#8eb3f8",pulse:"night"}
-    if(h>=5&&h<7)   return{sky:"#e8834a",face:"rgba(255,248,230,.80)",stars:false,night:false,label:"Sunrise",lc:"#c45a1a",lt:"#7a3010",pulse:"day"}
-    if(h>=7&&h<9)   return{sky:"#f5d68a",face:"rgba(255,252,235,.82)",stars:false,night:false,label:"Morning",lc:"#c89020",lt:"#7a5a10",pulse:"day"}
-    if(h>=9&&h<17)  return{sky:"#a8d8f0",face:"rgba(255,255,255,.82)",stars:false,night:false,label:"Day",lc:"#2080b0",lt:"#0a4060",pulse:"day"}
-    if(h>=17&&h<19) return{sky:"#f0874a",face:"rgba(255,245,235,.80)",stars:false,night:false,label:"Sunset",lc:"#c04818",lt:"#6a2808",pulse:"day"}
-    if(h>=19&&h<21) return{sky:"#2a1a5e",face:"rgba(12,8,38,.84)",stars:true,night:true,label:"Dusk",lc:"#3a2090",lt:"#b89af8",pulse:"night"}
-    return{sky:"#0b1530",face:"rgba(8,14,40,.85)",stars:true,night:true,label:"Night",lc:"#1e2d66",lt:"#8eb3f8",pulse:"night"}
-  }
-
-  function drawClock(canvas,color){
-    const now=new Date();
-    const tzDate=new Date(now.toLocaleString("en-US",{timeZone:canvas.dataset.tz}));
-    const h=tzDate.getHours(),m=tzDate.getMinutes(),s=tzDate.getSeconds();
-    const ctx=canvas.getContext("2d");
-    ctx.clearRect(0,0,SIZE,SIZE);
-    const ph=getPhase(h);
-
-    ctx.save();
-    ctx.beginPath();ctx.arc(CX,CY,R,0,Math.PI*2);ctx.clip();
-    ctx.fillStyle=ph.sky;ctx.fillRect(0,0,SIZE,SIZE);
-
-    if(ph.stars){
-      const sd=[[18,15,.9],[52,8,.7],[82,20,.8],[28,38,.6],[68,6,.9],[88,32,.7],[12,52,.7],[76,44,.8],[44,58,.6],[8,67,.9],[87,62,.7],[56,26,.8],[34,72,.6],[62,78,.7],[20,85,.8]];
-      ctx.fillStyle="rgba(255,255,255,.85)";
-      for(const[sx,sy,sr] of sd){ctx.beginPath();ctx.arc(sx/100*SIZE,sy/100*SIZE,sr,0,Math.PI*2);ctx.fill();}
-    }
-    if(!ph.night&&h>=6&&h<=18){
-      const frac=(h-6+(m/60))/12;
-      const sx2=CX+Math.cos(Math.PI+frac*Math.PI)*R*0.55;
-      const sy2=CY+Math.sin(Math.PI+frac*Math.PI)*R*0.52;
-      const sg=ctx.createRadialGradient(sx2,sy2,1,sx2,sy2,12);
-      sg.addColorStop(0,"#fff8c0");sg.addColorStop(.5,"#ffcc44");sg.addColorStop(1,"rgba(255,160,0,0)");
-      ctx.beginPath();ctx.arc(sx2,sy2,12,0,Math.PI*2);ctx.fillStyle=sg;ctx.fill();
-    } else if(ph.night){
-      const mx=CX+R*0.28,my=CY-R*0.4;
-      ctx.beginPath();ctx.arc(mx,my,9,0,Math.PI*2);ctx.fillStyle="#e8e4b0";ctx.fill();
-      ctx.beginPath();ctx.arc(mx+6,my-3,7,0,Math.PI*2);ctx.fillStyle=ph.sky;ctx.fill();
-      const mg=ctx.createRadialGradient(mx,my,4,mx,my,16);
-      mg.addColorStop(0,"rgba(230,220,140,.18)");mg.addColorStop(1,"transparent");
-      ctx.beginPath();ctx.arc(mx,my,16,0,Math.PI*2);ctx.fillStyle=mg;ctx.fill();
-    }
-    ctx.beginPath();ctx.arc(CX,CY,R,0,Math.PI*2);ctx.fillStyle=ph.face;ctx.fill();
-    ctx.restore();
-
-    ctx.save();
-    ctx.beginPath();ctx.arc(CX,CY,R,0,Math.PI*2);
-    ctx.strokeStyle=color;ctx.lineWidth=2.5;ctx.stroke();
-    ctx.restore();
-
-    const tc=ph.night?"rgba(255,255,255,":"rgba(0,0,0,";
-    for(let i=0;i<60;i++){
-      const angle=(i/60)*Math.PI*2-Math.PI/2;
-      const isQ=i%15===0,isH=i%5===0;
-      const r1=isQ?R-12:isH?R-9:R-5;
-      ctx.beginPath();
-      ctx.moveTo(CX+Math.cos(angle)*r1,CY+Math.sin(angle)*r1);
-      ctx.lineTo(CX+Math.cos(angle)*(R-3),CY+Math.sin(angle)*(R-3));
-      ctx.strokeStyle=isQ?tc+"0.75)":isH?tc+"0.5)":tc+"0.2)";
-      ctx.lineWidth=isQ?2:isH?1.5:0.8;ctx.lineCap="round";ctx.stroke();
-    }
-    ctx.save();
-    ctx.font=`bold ${Math.round(SIZE*0.09)}px 'Segoe UI',system-ui,sans-serif`;
-    ctx.textAlign="center";ctx.textBaseline="middle";
-    for(const{n,a} of [{n:"12",a:-Math.PI/2},{n:"3",a:0},{n:"6",a:Math.PI/2},{n:"9",a:Math.PI}]){
-      ctx.fillStyle=ph.night?"rgba(255,255,255,.8)":"rgba(0,0,0,.6)";
-      ctx.fillText(n,CX+Math.cos(a)*(R-22),CY+Math.sin(a)*(R-22));
-    }
-    ctx.restore();
-
-    const secFrac=s+new Date().getMilliseconds()/1000;
-    const hAngle=((h%12)+m/60+s/3600)/12*Math.PI*2-Math.PI/2;
-    ctx.save();ctx.lineCap="round";
-    ctx.beginPath();ctx.moveTo(CX-Math.cos(hAngle)*6,CY-Math.sin(hAngle)*6);
-    ctx.lineTo(CX+Math.cos(hAngle)*(R*0.48),CY+Math.sin(hAngle)*(R*0.48));
-    ctx.strokeStyle=ph.night?"rgba(255,255,255,.95)":"rgba(20,20,20,.9)";ctx.lineWidth=4;ctx.stroke();ctx.restore();
-
-    const mAngle=(m+s/60)/60*Math.PI*2-Math.PI/2;
-    ctx.save();ctx.lineCap="round";
-    ctx.beginPath();ctx.moveTo(CX-Math.cos(mAngle)*7,CY-Math.sin(mAngle)*7);
-    ctx.lineTo(CX+Math.cos(mAngle)*(R*0.68),CY+Math.sin(mAngle)*(R*0.68));
-    ctx.strokeStyle=ph.night?"rgba(255,255,255,.9)":"rgba(20,20,20,.85)";ctx.lineWidth=2.5;ctx.stroke();ctx.restore();
-
-    const sAngle=secFrac/60*Math.PI*2-Math.PI/2;
-    ctx.save();ctx.lineCap="round";
-    ctx.beginPath();ctx.moveTo(CX-Math.cos(sAngle)*14,CY-Math.sin(sAngle)*14);
-    ctx.lineTo(CX+Math.cos(sAngle)*(R*0.76),CY+Math.sin(sAngle)*(R*0.76));
-    ctx.strokeStyle=color;ctx.lineWidth=1.4;ctx.stroke();ctx.restore();
-
-    ctx.beginPath();ctx.arc(CX,CY,4.5,0,Math.PI*2);
-    ctx.fillStyle=ph.night?"rgba(255,255,255,.95)":"rgba(20,20,20,.9)";ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,2.5,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
-
-    const fmt=use24
-      ?tzDate.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false})
-      :tzDate.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",second:"2-digit",hour12:true});
-    canvas.dataset.time=fmt;
-    canvas.dataset.date=tzDate.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"});
-    canvas.dataset.pulse=ph.pulse;
-    canvas.dataset.label=ph.label;
-    canvas.dataset.lc=ph.lc;
-    canvas.dataset.lt=ph.lt;
-  }
-
-  /* pulse keyframes injected once */
-  const st=document.createElement("style");
-  st.textContent=`
-    .wc-card{border-radius:20px;padding:1.1rem .7rem .9rem;display:flex;flex-direction:column;align-items:center;cursor:default;position:relative;background:rgba(255,255,255,.04);border:1.5px solid transparent;transition:transform .25s ease;}
-    .wc-card:hover{transform:translateY(-3px);}
-    .wc-card.day-pulse{animation:wcDay 3s ease-in-out infinite;}
-    .wc-card.night-pulse{animation:wcNight 3s ease-in-out infinite;}
-    @keyframes wcDay{0%,100%{box-shadow:0 0 0 0 rgba(255,200,50,0),inset 0 0 0 1.5px rgba(240,180,40,.2)}30%{box-shadow:0 0 0 6px rgba(255,200,50,.16),0 0 0 12px rgba(255,200,50,.05),inset 0 0 0 1.5px rgba(240,180,40,.5)}60%{box-shadow:0 0 0 12px rgba(255,200,50,.07),0 0 0 20px rgba(255,200,50,.02),inset 0 0 0 1.5px rgba(240,180,40,.3)}}
-    @keyframes wcNight{0%,100%{box-shadow:0 0 0 0 rgba(40,50,120,0),inset 0 0 0 1.5px rgba(80,100,200,.12)}30%{box-shadow:0 0 0 6px rgba(40,50,120,.2),0 0 0 12px rgba(40,50,120,.07),inset 0 0 0 1.5px rgba(100,130,230,.38)}60%{box-shadow:0 0 0 12px rgba(40,50,120,.09),0 0 0 20px rgba(40,50,120,.03),inset 0 0 0 1.5px rgba(100,130,230,.22)}}
-    @media(max-width:480px){#wc-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}}
-  `;
-  document.head.appendChild(st);
-
-  const grid=document.getElementById("wc-grid");
-  cities.forEach(city=>{
-    const card=document.createElement("div");
-    card.className="wc-card";
-    const bar=document.createElement("div");
-    bar.style.cssText=`width:28px;height:3px;border-radius:2px;margin-bottom:10px;background:${city.color};flex-shrink:0;`;
-    card.appendChild(bar);
-    card.innerHTML+=`
-      <canvas class="wc-canvas" width="${SIZE}" height="${SIZE}"
-        data-tz="${city.tz}" data-color="${city.color}"
-        data-time="" data-date="" data-label="" data-lc="" data-lt="" data-pulse=""
-        style="border-radius:50%;display:block;"></canvas>
-      <div style="font-size:13px;font-weight:600;margin-top:9px;text-align:center;">${city.name}</div>
-      <div style="font-size:10px;opacity:.5;text-align:center;margin-top:2px;letter-spacing:.8px;text-transform:uppercase;">${city.label}</div>
-      <div class="wc-digital" style="font-size:15px;font-weight:600;text-align:center;margin-top:5px;font-variant-numeric:tabular-nums;letter-spacing:.3px;"></div>
-      <div class="wc-date" style="font-size:10px;opacity:.4;text-align:center;margin-top:2px;"></div>
-      <div class="wc-badge" style="font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:8px;margin-top:5px;"></div>
-    `;
-    card.querySelector("canvas").before(bar);
-    grid.appendChild(card);
-  });
-
-  function render(){
-    document.querySelectorAll(".wc-canvas").forEach(canvas=>{
-      const card=canvas.closest(".wc-card");
-      drawClock(canvas,canvas.dataset.color);
-      card.querySelector(".wc-digital").textContent=canvas.dataset.time;
-      card.querySelector(".wc-date").textContent=canvas.dataset.date;
-      const badge=card.querySelector(".wc-badge");
-      badge.textContent=canvas.dataset.label;
-      badge.style.background=canvas.dataset.lc;
-      badge.style.color=canvas.dataset.lt;
-      const p=canvas.dataset.pulse;
-      card.classList.toggle("day-pulse",p==="day");
-      card.classList.toggle("night-pulse",p==="night");
-    });
-  }
-
-  (function loop(){render();requestAnimationFrame(loop);})();
-})();
-</script>
 </body>
 </html>
