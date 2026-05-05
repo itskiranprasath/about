@@ -1,4 +1,4 @@
-Hey there! I’m an Engineer, Security Researcher, Algorithmic Forex Trader, Investor, Athlete, and Traveler — a curious mind who thrives on exploration, both in technology and in life.
+Hey there! I’m an Engineer, Security Researcher, Algorithmic Forex Trader, Investor, Athlete, and Traveler - a curious mind who thrives on exploration, both in technology and in life.
 
 I’ve always been fascinated by how systems work - whether it’s a complex cybersecurity framework, a financial market algorithm, or the mechanics of peak human performance. I love to break things apart, understand their core, and rebuild them stronger, smarter, and more secure.
 
